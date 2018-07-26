@@ -4,6 +4,7 @@ import Dailytasks from "./Dailytasks";
 import About from "./About";
 import DailyTaskDetails from '../components/DailyTaskDetail';
 import AddDailyTask from '../components/AddDailyTask';
+import EditDailyTask from '../components/EditDailyTask';
 
 const Main = () => (
     <Router>
@@ -13,6 +14,7 @@ const Main = () => (
             <Route exact path ="/Dailytasks" component={Dailytasks}/>
             <Route exact path ="/About" component={About}/>
             <Route exact path ="/dailytasks/add" component={AddDailyTask}/>
+            <Route exact path ="/dailytasks/edit/:id" component={EditDailyTask}/>
             <Route exact path ="/dailytasks/:id" component={DailyTaskDetails}/>
 
         </Switch>

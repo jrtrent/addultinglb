@@ -22,6 +22,14 @@ class DailyTaskDetails extends Component  {
             })
             .catch(err=>console.log(err));
         }
+
+        onDelete(){
+            let dailytaskId =this.state.details.dailytask;
+            axios.delete(`http://localhost:3000/api/dailytasks/${dailytaskId}`)
+                .then(response =>{
+                    this.props.history.push('/dailytasks');
+                }).catch(err =>console.log(err));
+        }
     render() {
         return (
            <div>
@@ -32,7 +40,7 @@ class DailyTaskDetails extends Component  {
                 <li className="collection-item">Priority: {this.state.details.priority}</li>
                 </ul>
                 <a  className="btn" href={`/dailytasks/edit/${this.state.details.id}`}>Edit</a>
-                <button className="btn red right">Delete</button>
+                <button onClick={this.onDelete.bind(this)} className="btn red right">Delete</button>
             </div>
 
         )

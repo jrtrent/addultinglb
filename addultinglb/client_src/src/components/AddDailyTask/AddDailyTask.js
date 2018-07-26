@@ -5,9 +5,17 @@ import axios from 'axios';
 
 class AddDailyTask extends Component  {
     AddDailyTask(newdailyTask) {
-        console.log(newdailyTask)
+        axios.request({
+            method:"post",
+            url:'http://localhost:3000/api/dailytasks',
+            data:newdailyTask
 
-    }
+        }).then(response => {
+    
+            this.props.history.push('/dailytasks')
+        }).catch(err=>console.log(err));
+
+    } //push is where it is redirected to. 
 
     handleFormSubmit = (e) => {
         e.preventDefault();
