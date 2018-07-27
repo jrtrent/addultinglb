@@ -3,6 +3,7 @@ import axios from 'axios';
 
 
 
+
 class AddDailyTask extends Component  {
     AddDailyTask(newdailyTask) {
         axios.request({
@@ -33,6 +34,7 @@ class AddDailyTask extends Component  {
     }
     
     render() {
+        
         return (
            <div>
                 <a className="waves-effect waves-light btn-small" href="/dailytasks"><i className="material-icons left">arrow_back</i>Back</a>

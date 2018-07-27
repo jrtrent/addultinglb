@@ -2,14 +2,19 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import Jumbotron from "../Jumbotron";
 import {Container} from "../Grid";
-import CategoryItem from '../DailyTaskItem';
+import CategoryItem from '../CategoryItem';
+
+
+
+
 
 
 class Categories extends Component {
     constructor(){
         super();
         this.state={
-            categories:[]
+            categories:[],
+           
         }
     }
     //renders dailytasks when page loads
@@ -26,10 +31,50 @@ class Categories extends Component {
             })
             .catch(err=>console.log(err));
     }
+
+    AddDailyTask(newdailyTask) {
+        axios.request({
+            method:"post",
+            url:'http://localhost:3000/api/dailytasks',
+            data:newdailyTask
+
+        }).then(response => {
+    
+            this.props.history.push('/categories')
+        }).catch(err=>console.log(err));
+
+    } //push is where it is redirected to. 
+
+    handleInputChange = event => {
+        const { name, value } = event.target;
+        this.setState({
+            [name]: value
+        });
+    };
+
+        
+
+    handleFormSubmit = (e) => {
+        e.preventDefault();
+       
+        const newdailyTask = {
+            name: this.refs.name.value,
+            category:this.refs.category.value,
+            priority: this.refs.priority.value,
+            estTime: this.refs.estTime.value,
+            recurring: this.refs.recurring.value
+
+        }
+        console.log(newdailyTask);
+        this.AddDailyTask(newdailyTask);
+       
+    }
+
+    
 render() {
         const categoryItems = this.state.categories.map((category, i) =>{
     return (
-            <CategoryItem  
+            <CategoryItem
             key={category.id} 
             item={category}/>
         )
@@ -43,6 +88,11 @@ render() {
                         {categoryItems}
                     </ul>
                 </Jumbotron>
+
+                
+               
+                
+
             </Container>
         )
     

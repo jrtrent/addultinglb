@@ -8,7 +8,9 @@ import EditDailyTask from '../components/EditDailyTask';
 import SignupForm from "../components/SignupForm";
 import Login from "../components/Login";
 import AddCategory from './AddCategory/AddCategory';
+import CategoryDetails from './CategoryDetails';
 import Categories from "./Categories";
+import ActiveTasks from "./ActiveTasks"
 
 
 const Main = () => (
@@ -19,7 +21,9 @@ const Main = () => (
             <Route exact path ="/Login" component={Login}/>
             <Route exact path ="/categories/add" component={AddCategory}/>
             <Route exact path ="/categories" component={Categories}/>
+            <Route exact path ="/categoryDetails" component={CategoryDetails}/>
             <Route exact path ="/Dailytasks" component={Dailytasks}/>
+            <Route exact path ="/activetasks" component={ActiveTasks}/>
             <Route exact path ="/About" component={About}/>
             <Route exact path ="/dailytasks/add" component={AddDailyTask}/>
             <Route exact path ="/dailytasks/edit/:id" component={EditDailyTask}/>

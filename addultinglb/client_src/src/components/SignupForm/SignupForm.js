@@ -3,6 +3,7 @@ import axios from 'axios';
 
 
 
+
 class SignupForm extends Component  {
     AddUser(newUser) {
         axios.request({
@@ -54,11 +55,11 @@ class SignupForm extends Component  {
                 <input type="submit" value="Save" className="btn" />
             
               </form>
-   
+     
+
         
          </div>
    
-
         );
     }
 

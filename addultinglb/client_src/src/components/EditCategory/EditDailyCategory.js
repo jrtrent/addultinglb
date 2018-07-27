@@ -4,7 +4,7 @@ import axios from 'axios';
 
 
 
-class EditDailyTask extends Component  {
+class EditCategory extends Component  {
         constructor(props){
             super(props);
             this.state = {
@@ -13,8 +13,7 @@ class EditDailyTask extends Component  {
                 category:'',
                 priority: '',
                 estTime: '',
-                recurring:'',
-                
+                recurring:''
 
             }
                 this.handleInputChange=this.handleInputChange.bind(this);

@@ -24,6 +24,9 @@
     "recurring": {
       "type": "boolean"
     },
+    "categoryId": {
+      "type": "string"
+    },
     "isDone": {
       "type": "boolean",
       "default": false
