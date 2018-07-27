@@ -1,11 +1,17 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import Timer from '../Timer';
+import {Panel} from 'react-bootstrap';
+global.jQuery = require('jquery');
 
 
 
 
 
-class EditDailyTask extends Component  {
+
+
+
+class CurrentTask extends Component  {
         constructor(props){
             super(props);
             this.state = {
@@ -16,6 +22,7 @@ class EditDailyTask extends Component  {
                 estTime: '',
                 recurring:'',
                 isDone:'',
+                notes:'',
                 
 
             }
@@ -24,9 +31,9 @@ class EditDailyTask extends Component  {
         }
 
             componentWillMount() {
-                this.getDailyTaskDetails();
+                this.getCurrentTask();
             }
-            getDailyTaskDetails(){
+            getCurrentTask(){
                 let dailytaskId = this.props.match.params.id;
                 axios.get(`http://localhost:3000/api/dailytasks/${dailytaskId}`)
                     .then(response => {
@@ -37,7 +44,8 @@ class EditDailyTask extends Component  {
                         priority: response.data.priority,
                         estTime: response.data.estTime,
                         recurring: response.data.recurring,
-                        isDone:response.data.isDone
+                        isDone:response.data.isDone,
+                        notes:response.data.notes
                     }, () => {
                         console.log(this.state);
                     });
@@ -52,7 +60,7 @@ class EditDailyTask extends Component  {
                     data:newdailyTask
         
                 }).then(response => {
-                    this.props.history.push('/dailytasks');
+                    this.props.history.push('/activetasks');
                 }).catch(err=>console.log(err));
         
             }
@@ -65,7 +73,10 @@ class EditDailyTask extends Component  {
             category:this.refs.category.value,
             priority: this.refs.priority.value,
             estTime: this.refs.estTime.value,
-            recurring: this.refs.recurring.value
+            recurring: this.refs.recurring.value,
+            isDone:this.refs.isDone.value,
+            notes:this.refs.notes.value
+
 
         }
         this.editDailyTask(newdailyTask);
@@ -88,7 +99,19 @@ class EditDailyTask extends Component  {
         return (
            <div>
                 <a className="waves-effect waves-light btn-small" href="/dailytasks"><i className="material-icons left">arrow_back</i>Back</a>
-              <h1>Edit dailytask </h1>
+              <h1>Current Task </h1>
+              <br />
+              <div className="app-content center-block">
+              <Panel>
+                    <Panel.Body>
+                    <Timer />
+                    </Panel.Body>
+                </Panel>
+             </div>
+                    
+                
+             
+            
               <br />
               <form onSubmit={this.handleFormSubmit.bind(this)}>
                 <div className="input-field">
@@ -150,6 +173,11 @@ class EditDailyTask extends Component  {
                          <span>Complete</span>
                     </label>
                 </div>
+                <div className="input-field col s12">
+                    <textarea id="textarea1" className="materialize-textarea"></textarea>
+                    <label htmlFor="notes">Task Notes</label>
+                </div>
+                
     
                 <input type="submit" value="Save" className="btn" />
 
@@ -164,4 +192,4 @@ class EditDailyTask extends Component  {
 
 }
 
-export default EditDailyTask;
+export default CurrentTask;

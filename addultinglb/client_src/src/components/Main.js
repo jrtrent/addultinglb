@@ -10,7 +10,8 @@ import Login from "../components/Login";
 import AddCategory from './AddCategory/AddCategory';
 import CategoryDetails from './CategoryDetails';
 import Categories from "./Categories";
-import ActiveTasks from "./ActiveTasks"
+import ActiveTasks from "./ActiveTasks";
+import CurrentTask from "./CurrentTask";
 
 
 const Main = () => (
@@ -24,6 +25,7 @@ const Main = () => (
             <Route exact path ="/categoryDetails" component={CategoryDetails}/>
             <Route exact path ="/Dailytasks" component={Dailytasks}/>
             <Route exact path ="/activetasks" component={ActiveTasks}/>
+            <Route exact path ="/currenttasks" component={CurrentTask}/>
             <Route exact path ="/About" component={About}/>
             <Route exact path ="/dailytasks/add" component={AddDailyTask}/>
             <Route exact path ="/dailytasks/edit/:id" component={EditDailyTask}/>

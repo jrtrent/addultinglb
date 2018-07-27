@@ -64,8 +64,11 @@ render() {
                 </Jumbotron>
                     <ul className="collection with-header">
                       <li className="collection-header"><h3>{categoryItems}</h3></li>
-                      <li className="collection-header"><h3>{dailyTaskItems}</h3></li>
+                      <li className="collection-item"><h3>{dailyTaskItems}</h3></li>
+                     
+                     
                     </ul>
+                   
                  
     
             </Container>
