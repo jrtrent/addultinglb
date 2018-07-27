@@ -45,7 +45,7 @@ class AddDailyTask extends Component  {
                 </div>
                 <div className="input-field">
                     <input type="text" name="category" ref="category" />
-                    <label htmlFor="category">category</label>
+                    <label htmlFor="category">Category</label>
                 </div>
                 <div className="input-field">
                     <input type="text" name="priority" ref="priority" />

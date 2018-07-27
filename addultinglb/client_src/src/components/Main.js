@@ -7,6 +7,9 @@ import AddDailyTask from '../components/AddDailyTask';
 import EditDailyTask from '../components/EditDailyTask';
 import SignupForm from "../components/SignupForm";
 import Login from "../components/Login";
+import AddCategory from './AddCategory/AddCategory';
+import Categories from "./Categories";
+
 
 const Main = () => (
     <Router>
@@ -14,6 +17,8 @@ const Main = () => (
         <Switch>
             <Route exact path ="/" component={SignupForm}/>
             <Route exact path ="/Login" component={Login}/>
+            <Route exact path ="/categories/add" component={AddCategory}/>
+            <Route exact path ="/categories" component={Categories}/>
             <Route exact path ="/Dailytasks" component={Dailytasks}/>
             <Route exact path ="/About" component={About}/>
             <Route exact path ="/dailytasks/add" component={AddDailyTask}/>

@@ -38,5 +38,9 @@
   "dailytasks": {
     "dataSource": "db",
     "public": true
+  },
+  "categories": {
+    "dataSource": "db",
+    "public": true
   }
 }
