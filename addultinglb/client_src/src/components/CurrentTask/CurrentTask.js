@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import Timer from '../Timer';
 import {Panel} from 'react-bootstrap';
-global.jQuery = require('jquery');
+
 
 
 

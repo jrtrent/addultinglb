@@ -16,7 +16,13 @@ class AddDailyTask extends Component  {
             this.props.history.push('/dailytasks')
         }).catch(err=>console.log(err));
 
-    } //push is where it is redirected to. 
+    } //push is where it is redirected to.
+    
+    
+    componentDidMount() {
+        var elems = document.querySelectorAll('select');
+        var instances = window.M.FormSelect.init(elems, {});
+    }
 
     handleFormSubmit = (e) => {
         e.preventDefault();
@@ -49,9 +55,16 @@ class AddDailyTask extends Component  {
                     <input type="text" name="category" ref="category" />
                     <label htmlFor="category">Category</label>
                 </div>
-                <div className="input-field">
-                    <input type="text" name="priority" ref="priority" />
-                    <label htmlFor="priority">Priority</label>
+                <div className="input-field col s12">
+                    {/* <input type="text" name="priority" ref="priority" /> */}
+            
+                    <select>
+                        <option value="" disabled selected>Choose your option</option>
+                        <option value="low">Low</option>
+                        <option value="medium">medium</option>
+                        <option value="high">high</option>
+                    </select>
+                    <label>Priority</label>
                 </div>
                 <div className="input-field">
                     <input type="text" name="estTime" ref="estTime" />
