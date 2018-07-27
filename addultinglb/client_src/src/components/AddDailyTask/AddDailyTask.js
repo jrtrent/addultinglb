@@ -22,7 +22,7 @@ class AddDailyTask extends Component  {
        
         const newdailyTask = {
             name: this.refs.name.value,
-            subject:this.refs.subject.value,
+            category:this.refs.category.value,
             priority: this.refs.priority.value,
             estTime: this.refs.estTime.value,
             recurring: this.refs.recurring.value
@@ -44,8 +44,8 @@ class AddDailyTask extends Component  {
                     <label htmlFor="name">TaskName</label>
                 </div>
                 <div className="input-field">
-                    <input type="text" name="subject" ref="subject" />
-                    <label htmlFor="subject">Subject</label>
+                    <input type="text" name="category" ref="category" />
+                    <label htmlFor="category">category</label>
                 </div>
                 <div className="input-field">
                     <input type="text" name="priority" ref="priority" />

@@ -1,0 +1,35 @@
+*{
+    box-sizing: border-box;
+}
+html, body{
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+body{
+    background: url('../../backgrounds1.jpg') no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+
+    opacity: 1;
+}
+Panel 
+	{
+		position: absolute;
+		margin: auto;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		width: 100px;
+		height: 100px;
+		background-color: #ccc;
+		border-radius: 3px;
+	  }
+
+
+

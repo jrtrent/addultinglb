@@ -5,12 +5,15 @@ import About from "./About";
 import DailyTaskDetails from '../components/DailyTaskDetail';
 import AddDailyTask from '../components/AddDailyTask';
 import EditDailyTask from '../components/EditDailyTask';
+import SignupForm from "../components/SignupForm";
+import Login from "../components/Login";
 
 const Main = () => (
     <Router>
         <div>
         <Switch>
-            <Route exact path ="/" component={Dailytasks}/>
+            <Route exact path ="/" component={SignupForm}/>
+            <Route exact path ="/Login" component={Login}/>
             <Route exact path ="/Dailytasks" component={Dailytasks}/>
             <Route exact path ="/About" component={About}/>
             <Route exact path ="/dailytasks/add" component={AddDailyTask}/>

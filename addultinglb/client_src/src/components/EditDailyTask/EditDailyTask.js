@@ -10,7 +10,7 @@ class EditDailyTask extends Component  {
             this.state = {
                 id:'',
                 name: '',
-                subject:'',
+                category:'',
                 priority: '',
                 estTime: '',
                 recurring:''
@@ -30,7 +30,7 @@ class EditDailyTask extends Component  {
                     this.setState({
                         id: response.data.id,
                         name: response.data.name,
-                        subject: response.data.subject,
+                        category: response.data.category,
                         priority: response.data.priority,
                         estTime: response.data.estTime,
                         recurring: response.data.recurring
@@ -58,7 +58,7 @@ class EditDailyTask extends Component  {
        
         const newdailyTask = {
             name: this.refs.name.value,
-            subject:this.refs.subject.value,
+            category:this.refs.category.value,
             priority: this.refs.priority.value,
             estTime: this.refs.estTime.value,
             recurring: this.refs.recurring.value
@@ -94,9 +94,9 @@ class EditDailyTask extends Component  {
                     
                 </div>
                 <div className="input-field">
-                <label  htmlFor="subject">Subject</label>
-                    <input type="text" name="subject" ref="subject" 
-                    value={this.state.subject}  
+                <label  htmlFor="category">category</label>
+                    <input type="text" name="category" ref="category" 
+                    value={this.state.category}  
                     placeholder=""
                     onChange={this.handleInputChange}/>
                  

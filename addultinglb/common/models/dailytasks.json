@@ -10,7 +10,7 @@
       "type": "string",
       "required": true
     },
-    "subject": {
+    "category": {
       "type": "string",
       "required": true
     },
