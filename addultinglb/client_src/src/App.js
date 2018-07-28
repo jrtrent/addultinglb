@@ -8,6 +8,7 @@ import {Container} from "./components/Grid";
 const App = () => (
   <div>
     <Navbar />
+    
     <Container fluid>
     <Main />
     </Container>

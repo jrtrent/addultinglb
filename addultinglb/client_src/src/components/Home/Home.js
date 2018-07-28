@@ -1,33 +1,45 @@
 import React from 'react';
-import {Container} from "../Grid";
+import {Carousel} from 'react-bootstrap';
+import "./Home.css";
 
-const Home = () => {
+
+const Home = () => (
     
-    <Container fluid>
-    <div className="row">
-        <div className="col s12 m7">
-            <div className="card">
-                <div className="card-image">
-                    <img src="images/sample-1.jpg" />
-                    <span className="card-title">Get It Together</span>
-                </div>
-            <div className="card-content">
-                <p>I am a very simple card. I am good at containing small bits of information.
-                I am convenient because I require little markup to use effectively.</p>
-            </div>
-                         <div className="card-action">
-                            <a href="/login">Login</a>
-                         </div>
-                        <div className="card-action">
-                            <a href="/SignupForm">Sign Up</a>
-                        </div>
-            </div>
-        </div>
-  </div>
-  </Container>
+    
+                <Carousel>
+            <Carousel.Item>
+                <img  alt="900x500" src="https://images.pexels.com/photos/988872/pexels-photo-988872.jpeg" />
+                <Carousel.Caption>
+                <h1>Addulting</h1>
+               
+                </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+                <img  alt="900x500" src="https://images.pexels.com/photos/1020317/pexels-photo-1020317.jpeg" />
+                <Carousel.Caption>
+                <h3>A Daily Task Manager for..</h3>
+                <p>]</p>
+                </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+                <img alt="900x500" src="https://images.pexels.com/photos/1095601/pexels-photo-1095601.jpeg" />
+                <Carousel.Caption>
+                <h3>Adults with ADD</h3>
+                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                </Carousel.Caption>
+            </Carousel.Item>
+            </Carousel>
+                
+                    
+              
+        
+
+    
+    
+  
   
   
 
-}
+)
 
-export default Home;
+export default Home

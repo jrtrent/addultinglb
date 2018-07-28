@@ -1,0 +1,27 @@
+nav{
+    margin-bottom:3em;
+  
+}
+li{
+    font-size:30px;
+}
+h1.home{
+    
+        font-family:  'Noto Serif', serif;;
+        color:red;
+        text-align: center;
+        font-size: 50px;
+        font-weight: bold;
+        margin: 1px;
+    
+
+}
+.medium{
+    background: url('https://images.pexels.com/photos/988872/pexels-photo-988872.jpeg') center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+
+    opacity: 1;
+}
