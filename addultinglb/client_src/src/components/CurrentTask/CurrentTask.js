@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import Timer from '../Timer';
 import {Panel} from 'react-bootstrap';
-
+import{Row,Container,Col} from "../Grid";
 
 
 
@@ -17,10 +17,6 @@ class CurrentTask extends Component  {
             this.state = {
                 id:'',
                 name: '',
-                category:'',
-                priority: '',
-                estTime: '',
-                recurring:'',
                 isDone:'',
                 notes:'',
                 
@@ -38,12 +34,7 @@ class CurrentTask extends Component  {
                 axios.get(`http://localhost:3000/api/dailytasks/${dailytaskId}`)
                     .then(response => {
                     this.setState({
-                        id: response.data.id,
-                        name: response.data.name,
-                        category: response.data.category,
-                        priority: response.data.priority,
-                        estTime: response.data.estTime,
-                        recurring: response.data.recurring,
+                        name:response.data.name,
                         isDone:response.data.isDone,
                         notes:response.data.notes
                     }, () => {
@@ -70,10 +61,6 @@ class CurrentTask extends Component  {
        
         const newdailyTask = {
             name: this.refs.name.value,
-            category:this.refs.category.value,
-            priority: this.refs.priority.value,
-            estTime: this.refs.estTime.value,
-            recurring: this.refs.recurring.value,
             isDone:this.refs.isDone.value,
             notes:this.refs.notes.value
 
@@ -98,93 +85,61 @@ class CurrentTask extends Component  {
     render() {
         return (
            <div>
-                <a className="waves-effect waves-light btn-small" href="/dailytasks"><i className="material-icons left">arrow_back</i>Back</a>
-              <h1>Current Task </h1>
+               <div>
+                <a className="waves-effect waves-light btn-small" href="/activetasks"><i className="material-icons left">arrow_back</i>Back</a>
+              <h1 className="align-left">Current Task </h1>
               <br />
-              <div className="app-content center-block">
-              <Panel>
-                    <Panel.Body>
-                    <Timer />
-                    </Panel.Body>
-                </Panel>
-             </div>
-                    
+              </div>
+              
+              <div className="row">
+                <div className="col s12 m5">
+                <div className="card large">
+                   <Timer />
+                </div>
+                </div>
+            </div>
+           
+           <div>
+            <div className="col s12 m5">
+                <div className="card large">
                 
-             
-            
-              <br />
-              <form onSubmit={this.handleFormSubmit.bind(this)}>
-                <div className="input-field">
-                <label  htmlFor="name">TaskName</label>
-                    <input type="text" 
-                    name="name" 
-                     ref="name"
-                     placeholder=""
-                     value={this.state.name}
-                    onChange={this.handleInputChange}/>
-                     
-                    
-                </div>
-                <div className="input-field">
-                <label  htmlFor="category">category</label>
-                    <input type="text" name="category" ref="category" 
-                    value={this.state.category}  
-                    placeholder=""
-                    onChange={this.handleInputChange}/>
-                 
-                </div>
-                <div className="input-field">
-                <label  htmlFor="priority">Priority</label>
-                    <input type="text"
-                     name="priority" 
-                     ref="priority"
-                     placeholder=""
-                      value={this.state.priority}
-                      onChange={this.handleClick}
-                      />
-                  
-                </div>
-                <div className="input-field">
-                <label  htmlFor="estTime">Estimated Time</label>
-                    <input type="text" 
-                    name="estTime" 
-                    ref="estTime" 
-                    placeholder=""
-                    value={this.state.estTime}
-                    onChange={this.handleInputChange} />
-                 
-                </div>
-
-                 <div className="input-field">
-                 <label  htmlFor="recurring">Recurring</label>
-                    <input type="text"
-                     name="recurring" 
-                     ref="recurring" 
-                     placeholder=""
-                     value={this.state.recurring}
-                     onChange={this.handleInputChange}/>
-                    
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox" 
-                        checked={this.state.isDone}
-                        onChange={this.handleClick} />
-                         <span>Complete</span>
-                    </label>
-                </div>
-                <div className="input-field col s12">
-                    <textarea id="textarea1" className="materialize-textarea"></textarea>
-                    <label htmlFor="notes">Task Notes</label>
-                </div>
                 
-    
-                <input type="submit" value="Save" className="btn" />
+                <form onSubmit={this.handleFormSubmit.bind(this)}>
+                    <div>
+                    <div className="input-field">
+                        <label  htmlFor="name">TaskName</label>
+                            <input type="text" 
+                            name="name" 
+                            ref="name"
+                            placeholder=""
+                            value={this.state.name}
+                            onChange={this.handleInputChange}/>
+                    </div>
+                        <label>
+                            <input type="checkbox" 
+                            checked={this.state.isDone}
+                            onChange={this.handleClick} />
+                            <span><h3>Complete</h3></span>
+                        </label>
+                    </div>
+                    <div className="input-field col s12">
+                        <textarea id="textarea1" className="materialize-textarea"></textarea>
+                        <label htmlFor="notes"><h3>Task Notes</h3></label>
+                    </div>
+                    <p>
+                    </p>
+                    
+                    <input type="submit" value="Save" className="btn" />
 
-              </form>
-   
+                    </form>
+                    </div>
+                </div>
+            </div>
+            </div>
+                 
+
+       
         
-         </div>
    
 
         )

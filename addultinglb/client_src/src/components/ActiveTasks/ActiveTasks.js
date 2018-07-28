@@ -1,11 +1,9 @@
-import React, {Component} from 'react';
-import axios from 'axios';
-import Jumbotron from "../Jumbotron";
+import React from 'react';
 import {Container, Row, Col} from "../Grid";
-import CategoryItem from '../CategoryItem';
-import DailyTaskItem from '../DailyTaskItem';
-import {Panel,ListGroup,ListGroupItem} from "react-bootstrap";
 import CategoryHome from "../CategoryHome";
+import CategoryWork from "../CategoryWork";
+import CategorySocial from "../CategorySocial";
+import CategoryFamily from "../CategoryFamily";
 
 
 
@@ -13,11 +11,22 @@ import CategoryHome from "../CategoryHome";
 const ActiveTasks = () => (
     <div>
         <Container fluid>
-		<Row>
-					<Col size="sm-3 md-6">
-        <CategoryHome />
-        </Col>
+        <Row>
+            <Col size="sm-3 md-6">
+                    <CategoryHome />
+            </Col>
+            <Col size="sm-3 md-6">
+                    <CategoryWork />
+            </Col>
         </Row>
+         <Row>
+        <Col size="sm-3 md-6">
+                 <CategoryFamily />
+        </Col>
+        <Col size="sm-3 md-6">
+             <CategorySocial />
+         </Col>
+         </Row>
         </Container>
     </div>
 

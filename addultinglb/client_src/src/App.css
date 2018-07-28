@@ -2,9 +2,7 @@ nav{
     margin-bottom:3em;
   
 }
-li{
-    font-size:30px;
-}
+
 h1.home{
     
         font-family:  'Noto Serif', serif;;
@@ -15,6 +13,9 @@ h1.home{
         margin: 1px;
     
 
+}
+label {
+    font-size:30px;
 }
 .medium{
     background: url('https://images.pexels.com/photos/988872/pexels-photo-988872.jpeg') center center fixed; 

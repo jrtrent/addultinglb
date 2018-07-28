@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import CurrentTaskItem from '../CurrentTaskItem';
 
-class CategoryHome extends Component  {
+class CategoryWork extends Component  {
     constructor(){
         super();
         this.state={
@@ -18,7 +18,7 @@ class CategoryHome extends Component  {
     
 
     getDailyTasks(){
-        axios.get('http://localhost:3000/api/dailytasks?filter[category]=home%20DESC&filter[limit]=2')
+        axios.get('http://localhost:3000/api/dailytasks?filter[category]=work%20DESC&filter[limit]=2')
             .then(response => {
                this.setState({dailytasks: response.data},()=>{
                  console.log(this.state);
@@ -30,7 +30,7 @@ render() {
  
     const dailyTaskItems = this.state.dailytasks.map((dailytask, i) =>{
         return (
-                <CurrentTaskItem
+                <CurrentTaskItem  
                 key={dailytask.id} 
                 item={dailytask}/>
             )
@@ -39,7 +39,7 @@ render() {
             
             <div>
                <ul className="collection with header">
-                <li class="collection-header center align"><h4>Home</h4></li>
+                <li class="collection-header center align"><h4>Work</h4></li>
                         {dailyTaskItems}
                     </ul>
 		
@@ -49,4 +49,4 @@ render() {
 }
 }
 
-export default CategoryHome;
+export default CategoryWork;

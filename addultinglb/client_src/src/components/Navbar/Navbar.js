@@ -41,7 +41,7 @@ class Navbar extends Component {
                         <li><a href="/dailytasks"><h4>Dailytasks</h4></a></li>
                         <li><a href="/dailytasks/add"><h4>Add Dailytasks</h4></a></li>
                         <li><a href="/activetasks"><h4>ActiveTasks</h4></a></li>
-                        <li> <Button class="grey" onClick={this.Logout}><h4>LogOut</h4></Button></li>
+                        <li> <Button className="grey" onClick={this.Logout}><h4>LogOut</h4></Button></li>
                     
                         
                     </ul>

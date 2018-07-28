@@ -29,7 +29,7 @@ const Main = () => (
             <Route exact path ="/categoryDetails" component={CategoryDetails}/>
             <Route exact path ="/Dailytasks" component={Dailytasks}/>
             <Route exact path ="/activetasks" component={ActiveTasks}/>
-            <Route exact path ="/currenttasks" component={CurrentTask}/>
+            <Route exact path ="/activetasks/:id" component={CurrentTask}/>
             <Route exact path ="/About" component={About}/>
             <Route exact path ="/dailytasks/add" component={AddDailyTask}/>
             <Route exact path ="/dailytasks/edit/:id" component={EditDailyTask}/>

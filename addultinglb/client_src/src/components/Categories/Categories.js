@@ -58,11 +58,11 @@ class Categories extends Component {
         e.preventDefault();
        
         const newdailyTask = {
-            name: this.state.name,
-            category:this.state.category,
-            priority: this.state.priority,
-            estTime: this.state.estTime,
-            recurring: this.states.recurring
+            name: this.refs.name.value,
+            category:this.refs.category.value,
+            priority: this.refs.priority.value,
+            estTime: this.refs.estTime.value,
+            recurring: this.refs.recurring.value
 
         }
         console.log(newdailyTask);
