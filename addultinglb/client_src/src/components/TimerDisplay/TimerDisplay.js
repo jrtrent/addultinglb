@@ -14,7 +14,7 @@ const TimerDisplay = (props) => {
             <div className="row center-block">
             {
                 (props.timerState === COMPLETE)
-                    && <img className="center-block youtube-responsive-width" height="259" width="480" title="alarm" src="https://giphy.com/embed/3o6gbcjYiGrpaLXy7K" alt="alarm" />
+                    && <iframe className="center-block youtube-responsive-width" height="259" width="480" title="alarm" src="https://www.youtube.com/embed/h4L24kE6nmg" alt="alarm"></iframe>
             }
         </div>
     <div className="row">
