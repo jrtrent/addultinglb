@@ -32,7 +32,7 @@ class Navbar extends Component {
         return (
             <div>
                  <nav>
-                    <div className="nav-wrapper blue">
+                    <div className="nav-wrapper red-lighten">
                     <a href="/" className="brand-logo"><h3>addulting</h3></a>
                     
                     <a href="/menu" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
